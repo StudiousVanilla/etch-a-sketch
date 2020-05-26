@@ -1,0 +1,48 @@
+body{
+  min-height: 100%;
+}
+
+#container{
+    background: white;
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+#container:hover {
+    background-color:transparent;
+  }
+
+
+.row{
+  width: 50px;
+}
+
+.square{
+    background: red;
+    height: 50px;
+    width: 50px;
+}
+
+.square:hover {
+    background-color: yellow;
+  }
+
+#button-holder{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+
+button{
+  font-size: 20px;
+  padding: 7px 10px 7px 10px;
+  width: 200px;
+}
+
+.colour-change{
+  background-color: blue;
+}
