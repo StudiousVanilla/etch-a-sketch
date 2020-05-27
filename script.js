@@ -1,12 +1,20 @@
 let labelRow = (row,rowNumber) =>{
-    row.classList.add('row')
-    row.setAttribute('id',rowNumber);
+    row.classList.add('row');
 }
 
 let lableSquare = (square) =>{
     square.classList.add('square')
 }
 let i = 1;
+
+let setHeight = (element,x) =>{
+    element.style.height = (500/x)+"px";
+}
+
+let setRowFlexBasis = (element,x) =>{
+    element.style.flexBasis = (500/x)+"px";
+}
+
 
 let createGrid = (numberOfSquares) =>{
 
@@ -16,7 +24,7 @@ let createGrid = (numberOfSquares) =>{
      
         for(column=numberOfSquares; column>0;column--){
             let newSquare = document.createElement('div')
-            lableSquare(newSquare)  
+            lableSquare(newSquare) 
             newSquare.addEventListener('mouseenter', () =>{
                 newSquare.classList.add('colour-change')
             });  
@@ -24,6 +32,18 @@ let createGrid = (numberOfSquares) =>{
         }
         container.appendChild(newRow);
     }
+   const squares = document.querySelectorAll(".square")
+
+   squares.forEach((square)=>{
+       setHeight(square,numberOfSquares);
+   });
+
+   const rows = document.querySelectorAll(".row")
+
+   rows.forEach((row)=>{
+    setRowFlexBasis(row,numberOfSquares);
+    });
+
 }
 
 createGrid(16);
